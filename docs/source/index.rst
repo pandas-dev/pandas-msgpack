@@ -18,6 +18,8 @@ both on the writing (serialization), and reading (deserialization).
 
    install.rst
    tutorial.rst
+   compression.rst
+   read_write.rst
    api.rst
    changelog.rst
 
