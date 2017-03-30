@@ -1,7 +1,7 @@
 pandas-msgpack
 ==============
 
-|Build Status| |Version Status| |Coverage Status|
+|Travis Build Status| |Appveyor Build Status| |Version Status| |Coverage Status|
 
 **pandas-msgpack** is a package providing an interface to msgpack from pandas
 
@@ -37,8 +37,10 @@ Usage
 
 See the `pandas-msgpack documentation <https://pandas-msgpack.readthedocs.io/>`_ for more details.
 
-.. |Build Status| image:: https://travis-ci.org/pydata/pandas-msgpack.svg?branch=master
+.. |Travis Build Status| image:: https://travis-ci.org/pydata/pandas-msgpack.svg?branch=master
    :target: https://travis-ci.org/pydata/pandas-msgpack
+.. |Appveyor Build Status| image:: https://ci.appveyor.com/api/projects/status/5716aqchorgwmwxf/branch/master?svg=true
+   :target: https://ci.appveyor.com/project/jreback/pandas-msgpack
 .. |Version Status| image:: https://img.shields.io/pypi/v/pandas-msgpack.svg
    :target: https://pypi.python.org/pypi/pandas-msgpack/
 .. |Coverage Status| image:: https://img.shields.io/codecov/c/github/pydata/pandas-msgpack.svg
