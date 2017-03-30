@@ -3,7 +3,7 @@ language: python
 
 env:
   - PYTHON=2.7 PANDAS=0.19.2
-  - PYTHON=3.4 PANDAS=0.18.1
+  - PYTHON=3.4 PANDAS=0.19.2
   - PYTHON=3.5 PANDAS=0.19.2 COVERAGE='true'
   - PYTHON=3.6 PANDAS='master' LINT='true'
 
@@ -20,7 +20,6 @@ install:
   - ci/install_travis.sh
 
 script:
-  - source activate test-environment
-  - pytest -s -v --cov=pandas_msgpack --cov-report xml:/tmp/pytest-cov.xml pandas_msgpack
-  - if [ $COVERAGE ]; then codecov ; fi
-  - if [ $LINT ]; then flake8 pandas_msgpack ; fi
+  - source activate test-environment && pytest -s -v --cov=pandas_msgpack --cov-report xml:/tmp/pytest-cov.xml pandas_msgpack
+  - if [ $COVERAGE ]; then source activate test-environment && codecov ; fi
+  - if [ $LINT ]; then source activate test-environment && flake8 pandas_msgpack ; fi
