@@ -165,9 +165,6 @@ def read_msgpack(path_or_buf, encoding='utf-8', iterator=False, **kwargs):
     Load msgpack pandas object from the specified
     file path
 
-    THIS IS AN EXPERIMENTAL LIBRARY and the storage format
-    may not be stable until a future release.
-
     Parameters
     ----------
     path_or_buf : string File path, BytesIO like or string
