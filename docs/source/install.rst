@@ -8,6 +8,7 @@ Conda
 
 .. code-block:: shell
 
+   # not enabled YET
    $ conda install pandas-msgpack --channel conda-forge
 
 This installs pandas-msgpack and all common dependencies, including ``pandas``.

@@ -15,6 +15,7 @@ Install latest release version via conda
 
 .. code-block:: shell
 
+   # not enabled YET
    $ conda install pandas-msgpack --channel conda-forge
 
 Install latest release version via pip
