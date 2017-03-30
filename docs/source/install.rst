@@ -35,8 +35,5 @@ Install from Source
 Dependencies
 ------------
 
-This module requires following additional dependencies:
-
-- `httplib2 <https://github.com/httplib2/httplib2>`__: HTTP client
-- `google-api-python-client <http://github.com/google/google-api-python-client>`__: Google's API client
-- `oauth2client <https://github.com/google/oauth2client>`__: authentication and authorization for Google's API
+The `blosc <https://pypi.python.org/pypi/blosc>` library can be optionally installed
+as a compressor.
