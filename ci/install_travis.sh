@@ -27,11 +27,12 @@ source activate test-environment
 pip install coverage pytest-cov flake8 codecov
 if [ $PANDAS == 'master' ]; then
 
-   conda install numpy pytz python-dateutil
+   echo "installing deps"
+   pip install numpy pytz python-dateutil
 
-   # install wheels from master
+   echo "installing pandas master wheel"
    PRE_WHEELS="https://7933911d6844c6c53a7d-47bd50c35cd79bd838daf386af554a83.ssl.cf2.rackcdn.com"
-   pip install --pre --upgrade --timeout=60 -f $PRE_WHEELS pandas
+   pip install --pre --timeout=60 -f $PRE_WHEELS pandas
 
 else
     conda install pandas=$PANDAS
