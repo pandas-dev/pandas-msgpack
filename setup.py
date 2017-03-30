@@ -61,6 +61,15 @@ unpacker_ext = Extension('pandas_msgpack.msgpack._unpacker',
 extensions.append(packer_ext)
 extensions.append(unpacker_ext)
 
+#----------------------------------------------------------------------
+# util
+# extension for pseudo-safely moving bytes into mutable buffers
+_move_ext = Extension('pandas_msgpack._move',
+                      depends=[],
+                      sources=['pandas_msgpack/move.c'])
+extensions.append(_move_ext)
+
+
 def readme():
     with open('README.rst') as f:
         return f.read()

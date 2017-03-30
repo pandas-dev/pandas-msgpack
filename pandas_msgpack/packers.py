@@ -68,7 +68,7 @@ import pandas.core.internals as internals
 from pandas_msgpack.msgpack import (Unpacker as _Unpacker,
                                     Packer as _Packer,
                                     ExtType)
-from pandas.util._move import (
+from pandas_msgpack._move import (
     BadMove as _BadMove,
     move_into_mutable_buffer as _move_into_mutable_buffer,
 )
