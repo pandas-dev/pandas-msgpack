@@ -4,12 +4,12 @@
 
 *   and push to github
 
-        git push pandas-msgpack master --tags
+        git push origin master --tags
 
 *  Upload to PyPI
 
         git clean -xfd
-        python setup.py register sdist bdist_wheel
+        python setup.py register sdist --formats=gztar
         twine upload dist/*
 
 *  Do a pull-request to the feedstock on `pandas-msgpack-feedstock <https://github.com/conda-forge/pandas-msgpack-feedstock/>`__

@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.1.2 / 2017-03-30
+0.1.3 / 2017-03-30
 ------------------
 
 Initial release of transfered code from `pandas <https://github.com/pandas-dev/pandas>`__
