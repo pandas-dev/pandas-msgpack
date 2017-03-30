@@ -106,6 +106,7 @@ setup(
     keywords='data',
     install_requires=INSTALL_REQUIRES,
     packages=['pandas_msgpack',
+              'pandas_msgpack.includes',
               'pandas_msgpack.msgpack',
               'pandas_msgpack.tests'],
     test_suite='tests',

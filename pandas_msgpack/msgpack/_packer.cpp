@@ -5,23 +5,22 @@
     "distutils": {
         "define_macros": [
             [
-                "__LITTLE_ENDIAN__",
+                "__LITTLE_ENDIAN__", 
                 "1"
             ]
-        ],
+        ], 
         "depends": [
-            "includes/pack.h",
-            "pandas_msgpack/includes/pack.h",
+            "pandas_msgpack/includes/pack.h", 
             "pandas_msgpack/includes/pack_template.h"
-        ],
+        ], 
         "extra_compile_args": [
             "-Wno-unused-function"
-        ],
+        ], 
         "include_dirs": [
             "pandas_msgack/includes"
-        ],
+        ], 
         "language": "c++"
-    },
+    }, 
     "module_name": "pandas_msgpack.msgpack._packer"
 }
 END: Cython Metadata */
@@ -474,7 +473,7 @@ static CYTHON_INLINE float __PYX_NAN() {
 #include "pythread.h"
 #include <stdlib.h>
 #include <limits.h>
-#include "../../includes/pack.h"
+#include "../includes/pack.h"
 #ifdef _OPENMP
 #include <omp.h>
 #endif /* _OPENMP */
