@@ -7,6 +7,15 @@ env:
   - PYTHON=3.5 PANDAS=0.19.2 COVERAGE='true'
   - PYTHON=3.6 PANDAS='master' LINT='true'
 
+before_install:
+  - echo "before_install"
+  - export PATH="$HOME/miniconda3/bin:$PATH"
+  - df -h
+  - pwd
+  - uname -a
+  - git --version
+  - git tag
+
 install:
   - ci/install_travis.sh
 
