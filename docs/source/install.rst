@@ -8,7 +8,6 @@ Conda
 
 .. code-block:: shell
 
-   # not enabled YET
    $ conda install pandas-msgpack --channel conda-forge
 
 This installs pandas-msgpack and all common dependencies, including ``pandas``.
@@ -36,5 +35,6 @@ Install from Source
 Dependencies
 ------------
 
-The `blosc <https://pypi.python.org/pypi/blosc>` library can be optionally installed
+- `pandas <https://pypi.python.org/pypi/pandas>`__ >= 0.19.2
+- `blosc <https://pypi.python.org/pypi/blosc>`__ library can be optionally installed
 as a compressor.
