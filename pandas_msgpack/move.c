@@ -193,7 +193,7 @@ PyMethodDef methods[] = {
     {NULL},
 };
 
-#define MODULE_NAME "pandas.util._move"
+#define MODULE_NAME "pandas_msgpack._move"
 
 #if !COMPILING_IN_PY2
 PyModuleDef _move_module = {
