@@ -44,4 +44,4 @@ if [ -e $REQ ]; then
 fi
 
 conda list
-python setup.py install
+python setup.py develop
