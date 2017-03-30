@@ -3,7 +3,7 @@
 from collections import namedtuple
 
 from .exceptions import *  # noqa
-from .version import version  # noqa
+from ._version import version  # noqa
 
 
 class ExtType(namedtuple('ExtType', 'code data')):

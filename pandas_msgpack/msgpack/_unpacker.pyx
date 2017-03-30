@@ -13,10 +13,10 @@ from libc.limits cimport *
 
 from .exceptions import (BufferFull, OutOfData,
                          UnpackValueError, ExtraData)
-from .msgpack import ExtType
+from . import ExtType
 
 
-cdef extern from "../includes/unpack.h":
+cdef extern from "../../includes/unpack.h":
     ctypedef struct msgpack_user:
         bint use_list
         PyObject* object_hook

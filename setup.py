@@ -43,19 +43,19 @@ else:
     macros = [('__LITTLE_ENDIAN__', '1')]
 
 extensions = []
-packer_ext = Extension('pandas_msgpack._packer',
+packer_ext = Extension('pandas_msgpack.msgpack._packer',
                         depends=['pandas_msgpack/includes/pack.h',
                                  'pandas_msgpack/includes/pack_template.h'],
-                        sources = ['pandas_msgpack/_packer.pyx'],
+                        sources = ['pandas_msgpack/msgpack/_packer.pyx'],
                         language='c++',
                         include_dirs=['pandas_msgack/includes'],
                         define_macros=macros,
                         extra_compile_args=extra_compile_args)
-unpacker_ext = Extension('pandas_msgpack._unpacker',
+unpacker_ext = Extension('pandas_msgpack.msgpack._unpacker',
                         depends=['pandas_msgpack/includes/unpack.h',
                                  'pandas_msgpack/includes/unpack_define.h',
                                  'pandas_msgpack/includes/unpack_template.h'],
-                        sources = ['pandas_msgpack/_unpacker.pyx'],
+                        sources = ['pandas_msgpack/msgpack/_unpacker.pyx'],
                          language='c++',
                         include_dirs=['pandas_msgpack/includes'],
                         define_macros=macros,

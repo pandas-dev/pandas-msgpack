@@ -7,10 +7,10 @@ from libc.string cimport *
 from libc.limits cimport *
 
 from .exceptions import PackValueError
-from .msgpack import ExtType
+from . import ExtType
 
 
-cdef extern from "../includes/pack.h":
+cdef extern from "../../includes/pack.h":
     struct msgpack_packer:
         char* buf
         size_t length
