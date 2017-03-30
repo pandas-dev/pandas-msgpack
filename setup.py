@@ -1,10 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from ast import parse
-import os
 import sys
-from setuptools import setup, find_packages, Command
+from setuptools import setup
 import pkg_resources
 from distutils.extension import Extension
 from distutils.command.build_ext import build_ext as build_ext
@@ -98,6 +96,8 @@ setup(
     ext_modules=cythonize(extensions),
     keywords='data',
     install_requires=INSTALL_REQUIRES,
-    packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
+    packages=['pandas_msgpack',
+              'pandas_msgpack.msgpack',
+              'pandas_msgpack.tests'],
     test_suite='tests',
 )
