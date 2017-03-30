@@ -8,7 +8,7 @@ env:
   - PYTHON=3.6 PANDAS='master' LINT='true'
 
 install:
-  - ci/install_trvish.sh
+  - ci/install_travis.sh
 
 script:
   - pytest -s -v --cov=pandas_msgpack --cov-report xml:/tmp/pytest-cov.xml pandas_msgpack
