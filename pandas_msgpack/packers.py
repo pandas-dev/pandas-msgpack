@@ -66,7 +66,9 @@ from pandas.io.common import get_filepath_or_buffer
 from pandas.core.internals import BlockManager, make_block, _safe_reshape
 import pandas.core.internals as internals
 
-from pandas_msgpack.msgpack import Unpacker as _Unpacker, Packer as _Packer, ExtType
+from pandas_msgpack.msgpack import (Unpacker as _Unpacker,
+                                    Packer as _Packer,
+                                    ExtType)
 from pandas.util._move import (
     BadMove as _BadMove,
     move_into_mutable_buffer as _move_into_mutable_buffer,

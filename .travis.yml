@@ -23,4 +23,4 @@ script:
   - source activate test-environment
   - pytest -s -v --cov=pandas_msgpack --cov-report xml:/tmp/pytest-cov.xml pandas_msgpack
   - if [ $COVERAGE ]; then codecov ; fi
-  - if [ $LINT ]; then flake8 pandas_msgpack -v ; fi
+  - if [ $LINT ]; then flake8 pandas_msgpack ; fi
