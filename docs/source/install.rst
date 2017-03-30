@@ -35,6 +35,5 @@ Install from Source
 Dependencies
 ------------
 
-- `pandas <https://pypi.python.org/pypi/pandas>`__ >= 0.19.2
-- `blosc <https://pypi.python.org/pypi/blosc>`__ library can be optionally installed
-as a compressor.
+- `pandas <https://pypi.python.org/pypi/pandas>`__ ``>=0.19.2``
+- `blosc <https://pypi.python.org/pypi/blosc>`__ library can be optionally installed as a compressor.
