@@ -65,34 +65,35 @@ These can take a bit more time to write.
 
 .. ipython:: python
 
-   %timeit df.to_msgpack('uncompressed.msg')
+   %timeit -n 1 -r 1 df.to_msgpack('uncompressed.msg')
 
 .. ipython:: python
 
-   %timeit df.to_msgpack('compressed_blosc.msg', compression='blosc')
+   %timeit -n 1 -r 1 df.to_msgpack('compressed_blosc.msg', compress='blosc')
 
 .. ipython:: python
 
-   %timeit df.to_msgpack('compressed_zlib.msg', compression='zlib')
+   %timeit -n 1 -r 1 df.to_msgpack('compressed_zlib.msg', compress='zlib')
 
 If compressed, it will be be automatically inferred and de-compressed upon reading.
 
 .. ipython:: python
 
-   %timeit pd.read_msgpack('uncompressed.msg')
+   %timeit -n 1 -r 1 pd.read_msgpack('uncompressed.msg')
 
 .. ipython:: python
 
-   %timeit pd.read_msgpack('compressed_blosc.msg')
+   %timeit -n 1 -r 1 pd.read_msgpack('compressed_blosc.msg')
 
 .. ipython:: python
 
-   %timeit pd.read_msgpack('compressed_blosc.msg')
+   %timeit -n 1 -r 1 pd.read_msgpack('compressed_blosc.msg')
 
 .. ipython:: python
    :suppress:
    :okexcept:
 
+   import os
    os.remove('uncompressed.msg')
    os.remove('compressed_blosc.msg')
    os.remove('compressed_zlib.msg')

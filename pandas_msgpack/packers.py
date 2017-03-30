@@ -132,14 +132,11 @@ def to_msgpack(path_or_buf, *args, **kwargs):
     encoding: encoding for unicode objects
     append : boolean whether to append to an existing msgpack
              (default is False)
-    compression : type of compressor (zlib or blosc), default to None (no
-                  compression)
+    compress : type of compressor (zlib or blosc), default to None (no
+               compression)
     """
     global compressor
     compressor = kwargs.pop('compress', None)
-    if compressor is None:
-        compressor = kwargs.pop('compression', None)
-
     if compressor:
         compressor = u(compressor)
     append = kwargs.pop('append', None)
