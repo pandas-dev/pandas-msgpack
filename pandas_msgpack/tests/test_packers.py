@@ -6,6 +6,7 @@ import numpy as np
 import sys
 from distutils.version import LooseVersion
 
+from pandas_msgpack import _is_pandas_legacy_version
 from pandas_msgpack import to_msgpack, read_msgpack
 
 from pandas import compat
@@ -28,8 +29,6 @@ from pandas import Timestamp, NaT
 from pandas.lib import iNaT
 
 nan = np.nan
-
-is_pandas_lt_020 = LooseVersion(pandas.__version__) < '0.20.0'
 
 try:
     import blosc  # NOQA
@@ -408,7 +407,7 @@ class TestSeries(TestPackers):
         for n in range(10):
             for s, i in self.d.items():
 
-                if is_datetime64tz_dtype(i) and is_pandas_lt_020:
+                if is_datetime64tz_dtype(i) and _is_pandas_legacy_version:
                     # xref: https://github.com/pandas-dev/pandas/issues/14901
                     # this is a bug in < 0.20.0
                     continue

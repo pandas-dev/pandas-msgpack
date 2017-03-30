@@ -42,11 +42,9 @@ from datetime import datetime, date, timedelta
 from dateutil.parser import parse
 import os
 from textwrap import dedent
-from distutils.version import LooseVersion
 import warnings
 
 import numpy as np
-import pandas
 from pandas import compat
 from pandas.compat import u, u_safe
 
@@ -65,6 +63,7 @@ from pandas.io.common import get_filepath_or_buffer
 from pandas.core.internals import BlockManager, make_block, _safe_reshape
 import pandas.core.internals as internals
 
+from pandas_msgpack import _is_pandas_legacy_version
 from pandas_msgpack.msgpack import (Unpacker as _Unpacker,
                                     Packer as _Packer,
                                     ExtType)
@@ -73,10 +72,9 @@ from pandas_msgpack._move import (
     move_into_mutable_buffer as _move_into_mutable_buffer,
 )
 
-is_pandas_lt_020 = LooseVersion(pandas.__version__) < '0.20.0'
 NaTType = type(NaT)
 
-# check whcih compression libs we have installed
+# check which compression libs we have installed
 try:
     import zlib
 
@@ -579,7 +577,7 @@ def decode(obj):
     elif typ == u'period_index':
         data = unconvert(obj[u'data'], np.int64, obj.get(u'compress'))
         d = dict(name=obj[u'name'], freq=obj[u'freq'])
-        if is_pandas_lt_020:
+        if _is_pandas_legacy_version:
             # legacy
             return globals()[obj[u'klass']](data, **d)
         else:
