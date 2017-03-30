@@ -57,7 +57,6 @@ from pandas import (Timestamp, Period, Series, DataFrame,  # noqa
                     Index, MultiIndex, Float64Index, Int64Index,
                     Panel, RangeIndex, PeriodIndex, DatetimeIndex, NaT,
                     Categorical, CategoricalIndex)
-from pandas.tslib import NaTType
 from pandas.sparse.api import SparseSeries, SparseDataFrame
 from pandas.sparse.array import BlockIndex, IntIndex
 from pandas.core.generic import NDFrame
