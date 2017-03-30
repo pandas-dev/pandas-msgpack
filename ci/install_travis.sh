@@ -32,7 +32,7 @@ if [ $PANDAS == 'master' ]; then
 
    echo "installing pandas master wheel"
    PRE_WHEELS="https://7933911d6844c6c53a7d-47bd50c35cd79bd838daf386af554a83.ssl.cf2.rackcdn.com"
-   pip install --pre --timeout=60 -f $PRE_WHEELS pandas
+   pip install --pre --timeout=60 -f $PRE_WHEELS pandas==0.19.0+700.g0ab0813
 
 else
     conda install pandas=$PANDAS
