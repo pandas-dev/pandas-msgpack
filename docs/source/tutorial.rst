@@ -57,7 +57,8 @@ Compression
 -----------
 
 Optionally, a ``compression`` argument will compress the resulting bytes.
-These can take a bit more time to write.
+These can take a bit more time to write. The available compressors are
+``zlib`` and `blosc <https://pypi.python.org/pypi/blosc>`.
 
 .. ipython:: python
 
