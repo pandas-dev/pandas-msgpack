@@ -17,35 +17,38 @@ Generally compression will increase the writing time.
 
 .. ipython:: python
 
+   import pandas as pd
+   from pandas_msgpack import to_msgpack, read_msgpack
+
    df = pd.DataFrame({'A': np.arange(100000),
                       'B': np.random.randn(100000),
                       'C': 'foo'})
 
 .. ipython:: python
 
-   %timeit -n 1 -r 1 df.to_msgpack('uncompressed.msg')
+   %timeit -n 1 -r 1 to_msgpack('uncompressed.msg', df)
 
 .. ipython:: python
 
-   %timeit -n 1 -r 1 df.to_msgpack('compressed_blosc.msg', compress='blosc')
+   %timeit -n 1 -r 1 to_msgpack('compressed_blosc.msg', df, compress='blosc')
 
 .. ipython:: python
 
-   %timeit -n 1 -r 1 df.to_msgpack('compressed_zlib.msg', compress='zlib')
+   %timeit -n 1 -r 1 to_msgpack('compressed_zlib.msg', df, compress='zlib')
 
 If compressed, it will be be automatically inferred and de-compressed upon reading.
 
 .. ipython:: python
 
-   %timeit -n 1 -r 1 pd.read_msgpack('uncompressed.msg')
+   %timeit -n 1 -r 1 read_msgpack('uncompressed.msg')
 
 .. ipython:: python
 
-   %timeit -n 1 -r 1 pd.read_msgpack('compressed_blosc.msg')
+   %timeit -n 1 -r 1 read_msgpack('compressed_blosc.msg')
 
 .. ipython:: python
 
-   %timeit -n 1 -r 1 pd.read_msgpack('compressed_zlib.msg')
+   %timeit -n 1 -r 1 read_msgpack('compressed_zlib.msg')
 
 These can provide storage space savings.
 
