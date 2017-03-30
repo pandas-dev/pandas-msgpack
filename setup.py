@@ -75,7 +75,7 @@ def readme():
         return f.read()
 
 INSTALL_REQUIRES = (
-    ['pandas']
+    ['pandas', 'cython']
 )
 
 setup(
