@@ -1,0 +1,9 @@
+coverage:
+  status:
+    project:
+      default:
+        target: '30'
+    patch:
+      default:
+        target: '50'
+        branches: null
