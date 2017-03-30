@@ -12,6 +12,7 @@ from pandas import compat
 from pandas.compat import u, PY3
 from pandas import (Series, DataFrame, Panel, MultiIndex, bdate_range,
                     date_range, period_range, Index, Categorical)
+from pandas.api.types import is_datetime64tz_dtype
 from pandas.core.common import PerformanceWarning
 import pandas.util.testing as tm
 from pandas.util.testing import (ensure_clean,
@@ -406,6 +407,12 @@ class TestSeries(TestPackers):
         # run multiple times here
         for n in range(10):
             for s, i in self.d.items():
+
+                if is_datetime64tz_dtype(i) and is_pandas_lt_020:
+                    # xref: https://github.com/pandas-dev/pandas/issues/14901
+                    # this is a bug in < 0.20.0
+                    continue
+
                 i_rec = self.encode_decode(i)
                 assert_series_equal(i, i_rec)
 
