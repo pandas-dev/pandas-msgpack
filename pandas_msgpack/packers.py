@@ -75,6 +75,7 @@ from pandas.util._move import (
 )
 
 is_pandas_lt_020 = LooseVersion(pandas.__version__) < '0.20.0'
+NaTType = type(NaT)
 
 # check whcih compression libs we have installed
 try:
