@@ -28,6 +28,8 @@ from pandas.lib import iNaT
 
 nan = np.nan
 
+is_pandas_lt_020 = LooseVersion(pandas.__version__) < '0.20.0'
+
 try:
     import blosc  # NOQA
 except ImportError:
@@ -806,9 +808,10 @@ class TestEncoding(TestPackers):
 
 def legacy_packers_versions():
     # yield the packers versions
+    # disable for now
     return []
-    #path = tm.get_data_path('legacy_msgpack')
-    #for v in os.listdir(path):
+    # path = tm.get_data_path('legacy_msgpack')
+    # for v in os.listdir(path):
     #    p = os.path.join(path, v)
     #    if os.path.isdir(p):
     #        yield v

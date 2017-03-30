@@ -42,9 +42,11 @@ from datetime import datetime, date, timedelta
 from dateutil.parser import parse
 import os
 from textwrap import dedent
+from distutils.version import LooseVersion
 import warnings
 
 import numpy as np
+import pandas
 from pandas import compat
 from pandas.compat import u, u_safe
 
@@ -69,6 +71,8 @@ from pandas.util._move import (
     BadMove as _BadMove,
     move_into_mutable_buffer as _move_into_mutable_buffer,
 )
+
+is_pandas_lt_020 = LooseVersion(pandas.__version__) < '0.20.0'
 
 # check whcih compression libs we have installed
 try:
@@ -573,7 +577,11 @@ def decode(obj):
     elif typ == u'period_index':
         data = unconvert(obj[u'data'], np.int64, obj.get(u'compress'))
         d = dict(name=obj[u'name'], freq=obj[u'freq'])
-        return globals()[obj[u'klass']]._from_ordinals(data, **d)
+        if is_pandas_lt_020:
+            # legacy
+            return globals()[obj[u'klass']](data, **d)
+        else:
+            return globals()[obj[u'klass']]._from_ordinals(data, **d)
     elif typ == u'datetime_index':
         data = unconvert(obj[u'data'], np.int64, obj.get(u'compress'))
         d = dict(name=obj[u'name'], freq=obj[u'freq'], verify_integrity=False)
