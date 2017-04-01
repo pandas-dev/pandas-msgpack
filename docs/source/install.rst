@@ -15,7 +15,7 @@ This installs pandas-msgpack and all common dependencies, including ``pandas``.
 Pip
 ---
 
-To install the latest version of pandas-msgpack: from the
+To install the latest version of pandas-msgpack:
 
 .. code-block:: shell
 
