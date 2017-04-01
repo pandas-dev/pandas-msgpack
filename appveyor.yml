@@ -78,7 +78,7 @@ install:
   - cmd: conda list -n pandas-msgpack
 
   # build wheels
-  - cmd: '%CMD_IN_ENV% python setup.py sdist bdist_wheel'
+  - cmd: '%CMD_IN_ENV% python setup.py bdist_wheel'
 
   # install
   - pip install --no-index --find-links=.\dist\ pandas-msgpack
