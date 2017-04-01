@@ -86,6 +86,7 @@ install:
 test_script:
   # tests
   - cmd: activate pandas-msgpack
+  - cmd: cd c:\\
   - cmd: python -c "import pandas_msgpack; pandas_msgpack.test('-v')"
 
 artifacts:
