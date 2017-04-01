@@ -12,6 +12,10 @@ _is_pandas_legacy_version = pv.version[1] == 19 and len(pv.version) == 3
 
 from .packers import to_msgpack, read_msgpack
 
+# testing
+from ._tester import test
+
+# versioning
 from ._version import get_versions
 
 versions = get_versions()
