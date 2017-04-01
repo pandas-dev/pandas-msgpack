@@ -86,7 +86,7 @@ install:
 test_script:
   # tests
   - cmd: activate pandas-msgpack
-  - cmd: cd c:\\temp
+  - cmd: cd c:\\projects
   - cmd: pytest --pyargs pandas_msgpack -v
 
 artifacts:
