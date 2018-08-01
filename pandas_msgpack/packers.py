@@ -61,12 +61,12 @@ except ImportError:
     from pandas.sparse.api import SparseSeries, SparseDataFrame
 try:
     from pandas.core.sparse.array import BlockIndex, IntIndex
-except ImportError
+except ImportError:
     from pandas.sparse.array import BlockIndex, IntIndex
 from pandas.core.generic import NDFrame
 try:
     from pandas.errors import PerformanceWarning
-except:
+except ImportError:
     from pandas.core.common import PerformanceWarning
 from pandas.io.common import get_filepath_or_buffer
 from pandas.core.internals import BlockManager, make_block, _safe_reshape
