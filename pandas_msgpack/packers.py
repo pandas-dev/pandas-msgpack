@@ -55,10 +55,19 @@ from pandas import (Timestamp, Period, Series, DataFrame,  # noqa
                     Index, MultiIndex, Float64Index, Int64Index,
                     Panel, RangeIndex, PeriodIndex, DatetimeIndex, NaT,
                     Categorical, CategoricalIndex)
-from pandas.sparse.api import SparseSeries, SparseDataFrame
-from pandas.sparse.array import BlockIndex, IntIndex
+try:
+    from pandas import SparseSeries, SparseDataFrame
+except ImportError:
+    from pandas.sparse.api import SparseSeries, SparseDataFrame
+try:
+    from pandas.core.sparse.array import BlockIndex, IntIndex
+except ImportError
+    from pandas.sparse.array import BlockIndex, IntIndex
 from pandas.core.generic import NDFrame
-from pandas.core.common import PerformanceWarning
+try:
+    from pandas.errors import PerformanceWarning
+except:
+    from pandas.core.common import PerformanceWarning
 from pandas.io.common import get_filepath_or_buffer
 from pandas.core.internals import BlockManager, make_block, _safe_reshape
 import pandas.core.internals as internals
