@@ -1,6 +1,9 @@
 pandas-msgpack
 ==============
 
+THIS LIBRARY IS NO LONGER IN DEVELOPMENT OR MAINTAINED
+------------------------------------------------------
+
 |Travis Build Status| |Appveyor Build Status| |Version Status| |Coverage Status|
 
 **pandas-msgpack** is a package providing an interface to msgpack from pandas
